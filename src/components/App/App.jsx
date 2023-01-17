@@ -29,11 +29,11 @@ export class App extends Component {
     });
   };
 
-  filterContacts = (name) => {
-    this.state.contacts.filter(contact => {
-      console.log(contact)
-    })
-  }
+  // filterContacts = (name) => {
+  //   this.state.contacts.filter(contact => {
+  //     console.log(contact)
+  //   })
+  // }
 
   render() {
     const { contacts } = this.state;
@@ -43,7 +43,7 @@ export class App extends Component {
         <h1>Phonebook</h1>
         <ContactsForm addsContacts={this.addsNameContacts} />
         <h2>Contacts</h2>
-        {/* <Filter filterContacts={this.filterContacts} /> */}
+        <Filter filterContacts={this.filterContacts} />
         <ContactsList contacts={contacts} />
       </div>
     );
