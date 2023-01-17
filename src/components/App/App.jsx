@@ -43,7 +43,7 @@ export class App extends Component {
         <h1>Phonebook</h1>
         <ContactsForm addsContacts={this.addsNameContacts} />
         <h2>Contacts</h2>
-        <Filter filterContacts={this.filterContacts} />
+        {/* <Filter filterContacts={this.filterContacts} /> */}
         <ContactsList contacts={contacts} />
       </div>
     );
