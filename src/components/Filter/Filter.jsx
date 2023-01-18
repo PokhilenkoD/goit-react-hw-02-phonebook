@@ -1,27 +1,8 @@
-import { Component } from 'react';
-
-export class Filter extends Component {
-    props = {
-        
-    }
-  state = {
-    filter: '',
-  };
-
-  handleChange = evt => {
-      this.setState({ filter: evt.target.value });
-      
-  };
-  render() {
-      const { filter } = this.state;
-      
-    return (
-      <div>
-        <h3>Find contacts by name</h3>
-        <input type="text" value={filter} onChange={this.handleChange} />
-      </div>
-    );
-  }
-}
-
-
+export const Filter = ({ value, handleChange }) => {
+  return (
+    <div>
+      <h4>Find contacts by name</h4>
+      <input type="text" value={value} onChange={handleChange} />
+    </div>
+  );
+};
