@@ -1,4 +1,4 @@
-import { Formik, Form, Field } from 'formik';
+import { Formik, Field } from 'formik';
 import PropTypes from 'prop-types';
 import { Button, Label, StyledForm } from './ContactForm.styled';
 
