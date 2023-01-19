@@ -1,8 +1,10 @@
 import { ContactsForm } from 'components/ContactsForm/ContactForm';
-import { ContactsList } from 'components/ContactsList/ContactList';
+import { ContactsList } from 'components/ContactsList/ContactsList';
 import { Component } from 'react';
 import { nanoid } from 'nanoid';
 import { Filter } from 'components/Filter/Filter';
+import { AppBox, MainTitle, SubTitle } from './App.styled';
+
 
 export class App extends Component {
   state = {
@@ -53,15 +55,17 @@ export class App extends Component {
     const contacts = this.state.contacts.filter(contact => {
       return contact.name.toLowerCase().includes(this.state.filter);
     });
+    const filterValue = this.state.filter;
 
     return (
-      <div>
-        <h1>Phonebook</h1>
+      <AppBox>
+        <MainTitle>Phonebook</MainTitle>
         <ContactsForm addsContacts={this.addsNameContacts} />
-        <h2>Contacts</h2>
-        <Filter handleChange={this.handleChange} />
+        <SubTitle>Contacts</SubTitle>
+        <Filter filterValue={filterValue} handleChange={this.handleChange} />
         <ContactsList contacts={contacts} deleteContact={this.deleteContacts} />
-      </div>
+      </AppBox>
     );
   }
 }
+
